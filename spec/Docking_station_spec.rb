@@ -1,14 +1,15 @@
-require 'docking_station.rb' # '/Users/nadia/Documents/Makers/boris_bikes/lib/docking_station.rb'
+require 'docking_station.rb'
 
 describe DockingStation do
-  it {is_expected.respond_to? 'release_bike'}
+  it 'check docking station realeases bike' do
+  expect(DockingStation.new).to respond_to(:release_bike)
+  end
   it 'release bike' do
    @bike = subject.release_bike
    expect(@bike).to be_working
   end
     it {is_expected.respond_to? 'dock_bike'}
     it 'dock bike' do
-      Bike.new
-      @bike = subject.dock_bike
+      expect(DockingStation.new).to respond_to(:dock_bike).with(1).argument
   end
 end
